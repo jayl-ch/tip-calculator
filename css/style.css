@@ -119,6 +119,10 @@ form {
   color: var(--Green-900);
 }
 
+.tip-options .custom::placeholder {
+  text-align: center;
+}
+
 .tip-options .btn.active {
   background-color: var(--Green-400);
   color: var(--Green-900);
@@ -185,6 +189,7 @@ label {
   font-size: 1.4rem;
   text-transform: uppercase;
   margin-block-start: auto;
+  font-weight: 700;
 }
 
 @media all and (min-width: 1440px) {
