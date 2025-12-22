@@ -160,7 +160,7 @@ form {
 .amount-text > p,
 .total-text > p {
   color: var(--Green-400);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .amount-col1 p:first-child,
