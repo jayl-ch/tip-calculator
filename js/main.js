@@ -9,18 +9,22 @@ const reset = document.querySelector(".reset");
 
 let tip = 0;
 
-function removeClass(option) {
-  option.forEach((b) => {
+function removeClass(buttons) {
+  buttons.forEach((b) => {
     b.classList.remove("active");
   });
+}
+
+function resetResult() {
+  amount.textContent = "$0.00";
+  total.textContent = "$0.00";
 }
 
 function validateInput(input) {
   if (!input.person || input.person < 1) {
     people.classList.add("error");
     errmsg.textContent = "Can't be zero";
-    amount.textContent = "$0.00";
-    total.textContent = "$0.00";
+    resetResult();
     return false;
   }
   people.classList.remove("error");
@@ -34,8 +38,8 @@ function compute() {
     person: person.value,
   };
   if (!validateInput(input)) return;
-  let tipAmount = input.bill * tip;
 
+  let tipAmount = input.bill * tip;
   amount.textContent = `$${(tipAmount / input.person).toFixed(2)}`;
   total.textContent = `$${((input.bill + tipAmount) / input.person).toFixed(2)}`;
 }
@@ -61,8 +65,10 @@ people.addEventListener("input", compute);
 reset.addEventListener("click", () => {
   bill.value = "";
   people.value = "";
-  amount.textContent = "$0.00";
-  total.textContent = "$0.00";
+  resetResult();
   removeClass(option);
   tip = 0;
+  custom.value = "";
+  errmsg.textContent = "";
+  people.classList.remove("error");
 });

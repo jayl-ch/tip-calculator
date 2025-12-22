@@ -3,6 +3,7 @@
 :root {
   --Green-400: hsl(172, 67%, 45%);
   --Green-900: hsl(183, 100%, 15%);
+  --Green-300: hsl(172, 67%, 65%);
   --Grey-500: hsl(186, 14%, 43%);
   --Grey-400: hsl(184, 14%, 56%);
   --Grey-200: hsl(185, 41%, 84%);
@@ -123,6 +124,14 @@ form {
   text-align: center;
 }
 
+.tip-options .btn {
+  transition: background-color 0.2s ease;
+}
+
+.tip-options .btn:hover {
+  background-color: var(--Green-300);
+}
+
 .tip-options .btn.active {
   background-color: var(--Green-400);
   color: var(--Green-900);
@@ -190,9 +199,15 @@ label {
   text-transform: uppercase;
   margin-block-start: auto;
   font-weight: 700;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
-@media all and (min-width: 1440px) {
+.total-wrapper .reset:hover {
+  background-color: var(--Green-300);
+}
+
+@media all and (min-width: 1140px) {
   body {
     align-content: center;
     gap: 2rem;
@@ -206,5 +221,12 @@ label {
   }
   .result {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .total-wrapper .reset,
+  .tip-options .btn {
+    transition: none;
   }
 }
