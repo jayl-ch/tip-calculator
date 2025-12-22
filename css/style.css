@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --Green-400: hsl(172, 67%, 45%);
+  --Green-900: hsl(183, 100%, 15%);
+  --Grey-500: hsl(186, 14%, 43%);
+  --Grey-400: hsl(184, 14%, 56%);
+  --Grey-200: hsl(185, 41%, 84%);
+  --Grey-50: hsl(189, 47%, 97%);
+  --White: hsl(0, 100%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--Grey-200);
+  margin: 0;
+  display: grid;
+  justify-items: center;
+}
+
+.logo-wrapper {
+  margin: auto;
+}
+
+.hero {
+  background-color: var(--White);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+form {
+  display: grid;
+  gap: 2rem;
+}
+
+.bill-input-wrapper,
+.people-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.bill-input,
+.people-input,
+.tip-selection {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.bill-input-wrapper img,
+.people-input-wrapper img {
+  position: absolute;
+  margin-inline-start: 1rem;
+}
+
+.bill-input-wrapper input,
+.people-input-wrapper input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  text-align: end;
+  border: none;
+  background-color: var(--Grey-50);
+  border-radius: 10px;
+  font-size: 1.4rem;
+  color: var(--Green-900);
+  transition: outline 0.2s ease;
+}
+
+.bill-input-wrapper input:focus,
+.people-input-wrapper input:focus,
+.tip-options .custom:focus {
+  outline: 2px solid var(--Green-400);
+}
+
+.people-input-wrapper input.error {
+  outline: 2px solid red;
+}
+
+.tip-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.tip-options input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.4rem;
+  background-color: var(--Green-900);
+  color: var(--White);
+}
+
+.tip-options input:not(:last-of-type) {
+  cursor: pointer;
+}
+
+.tip-options .custom {
+  background-color: var(--Grey-50);
+  text-align: end;
+  color: var(--Green-900);
+}
+
+.tip-options .btn.active {
+  background-color: var(--Green-400);
+  color: var(--Green-900);
+}
+
+.result {
+  background-color: var(--Green-900);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.result .total-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.amount-text,
+.total-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--White);
+}
+
+.amount-text > p,
+.total-text > p {
+  color: var(--Green-400);
+  font-size: 1.5rem;
+}
+
+.amount-col1 p:first-child,
+.total-col1 p:first-child {
+  margin-block-end: 0;
+  font-size: 1.1rem;
+}
+
+label {
+  color: var(--Grey-500);
+}
+
+.people-input {
+  position: relative;
+}
+
+.people-input span {
+  position: absolute;
+  color: red;
+  right: 0;
+}
+
+.amount-col1 p:last-child,
+.total-col1 p:last-child {
+  color: var(--Grey-400);
+  margin-block-start: 0;
+}
+
+.total-wrapper .reset {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--Green-400);
+  color: var(--Green-900);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-block-start: auto;
+}
+
+@media all and (min-width: 1440px) {
+  body {
+    align-content: center;
+    gap: 2rem;
+  }
+  .hero {
+    flex-direction: row;
+    border-radius: 20px;
+  }
+  form {
+    width: 100%;
+  }
+  .result {
+    width: 100%;
+  }
+}
