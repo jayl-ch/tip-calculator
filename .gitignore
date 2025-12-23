@@ -39,3 +39,11 @@ npm-debug.log*
 *.pem
 .DS_Store
 Thumbs.db
+
+# Unnecessary
+README-template.md:Zone.Identifier
+README.md:Zone.Identifier
+index.html:Zone.Identifier
+preview.jpg:Zone.Identifier
+style-guide.md:Zone.Identifier
+style-guide.md
